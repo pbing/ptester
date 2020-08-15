@@ -145,7 +145,7 @@ taken as a test failure unless test-error is being used.")
 	 (condition (condition)
 	   (if* (and (null ,g-catch-breaks)
 		     (typep condition 'simple-break))
-	      then (break condition)
+	      then (break "~&Condition: ~a~%" condition)
 	    elseif ,g-announce
 	      then (format *error-output* "~&Condition type: ~a~%"
 			   (class-of condition))
